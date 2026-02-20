@@ -4,23 +4,22 @@ class Traffic {
         while (true) {
             try {
                 System.out.println("RED Light — STOP");
-                for (int i = time; i >= 0; i--) {
-                    System.out.println(i);
-                    Thread.sleep(1000);//This will make program pause for 1sec
-                }
+                  countdown(time);
                 System.out.println("YELLOW Light — READY");
-                for (int i = 3; i >= 0; i--) {
-                    System.out.println(i);
-                    Thread.sleep(1000);
-                }
+                countdown(3);
                 System.out.println("GREEN Light — GO");
-                for (int i = time; i >= 0; i--) {
-                    System.out.println(i);
-                    Thread.sleep(1000);
-                }
+                countdown(time);
           } catch (InterruptedException e) {
                 System.out.println("Timer interrupted");
+                return;
             }
+        }
+    }
+    private void countdown(int seconds) throws
+    InterruptedException{
+        for (int i = seconds; i > 0; i--) {
+             System.out.println(i);
+             Thread.sleep(1000);//This will make program pause for 1sec
         }
     }
 }
@@ -35,3 +34,4 @@ public class Project{
     }
 
 }
+
